@@ -305,18 +305,19 @@ local function createRedEnemy(x, y)
   
   group.speed = .8 * getValue("enemy.speed")
   
-  if set.style==0 then
-    local qwa = display.newRect( group, 0, 0, 70.4, 70.4 )
-    qwa.fill = colors.black
-    local qwa = display.newRect( group, 0, 0, 36.9, 36.9 )
-    qwa.fill = colors.red
-  else
-    group.border = {}
-    rectEnemy(group, 0, 0, 70.4, 70.4, {1,0,0})
+  local img = display.newImageRect( group, "img/bug5.png", 140, 140 )
+  -- if set.style==0 then
+  --   local qwa = display.newRect( group, 0, 0, 70.4, 70.4 )
+  --   qwa.fill = colors.black
+  --   local qwa = display.newRect( group, 0, 0, 36.9, 36.9 )
+  --   qwa.fill = colors.red
+  -- else
+  --   group.border = {}
+  --   rectEnemy(group, 0, 0, 70.4, 70.4, {1,0,0})
 
-    local qwa = display.newRect( group, 0, 0, 36.9, 36.9 )
-    qwa.fill = {1,0,0}
-  end
+  --   local qwa = display.newRect( group, 0, 0, 36.9, 36.9 )
+  --   qwa.fill = {1,0,0}
+  -- end
 
   physics.addBody( group, { box={halfWidth=70.4*.5-3, halfHeight=70.4*.5-3} } )
   group.isFixedRotation = true
@@ -344,34 +345,35 @@ local function createBigEnemy(x, y)
   
   group.speed = .9 * getValue("enemy.speed")
 
-  if set.style==0 then
-    local qwa = display.newRect( group, -6.84, -43.335, 32, 32 )
-    qwa.fill = colors.black
-    local qwa = display.newRect( group, 18.374, -25.18, 32, 32 )
-    qwa.fill = colors.black
-    local qwa = display.newRect( group, 28.3, -1.5, 32, 32 )
-    qwa.fill = colors.black
-    local qwa = display.newRect( group, 7, 11.3, 32, 32 )
-    qwa.fill = colors.black
-    local qwa = display.newRect( group, 3.737, -11.3, 32, 32 )
-    qwa.fill = colors.black
-    local qwa = display.newRect( group, -14.27, 4.19, 32, 32 )
-    qwa.fill = colors.black
-    local qwa = display.newRect( group, -28.3, -14.577, 32, 32 )
-    qwa.fill = colors.black
-    local qwa = display.newRect( group, -17.473, -23.17, 32, 32 )
-    qwa.fill = colors.black
-  else
-    group.border = {}
-    rectEnemy(group, -6.84, -43.335, 32, 32, {1,.7,0})
-    rectEnemy(group, 18.374, -25.18, 32, 32, {1,.7,0})
-    rectEnemy(group, 28.3, -1.5, 32, 32, {1,.7,0})
-    rectEnemy(group, 7, 11.3, 32, 32, {1,.7,0})
-    rectEnemy(group, 3.737, -11.3, 32, 32, {1,.7,0})
-    rectEnemy(group, -14.27, 4.19, 32, 32, {1,.7,0})
-    rectEnemy(group, -28.3, -14.577, 32, 32, {1,.7,0})
-    rectEnemy(group, -17.473, -23.17, 32, 32, {1,.7,0})
-  end
+  local img = display.newImageRect( group, "img/bug3.png", 160, 160 )
+  -- if set.style==0 then
+  --   local qwa = display.newRect( group, -6.84, -43.335, 32, 32 )
+  --   qwa.fill = colors.black
+  --   local qwa = display.newRect( group, 18.374, -25.18, 32, 32 )
+  --   qwa.fill = colors.black
+  --   local qwa = display.newRect( group, 28.3, -1.5, 32, 32 )
+  --   qwa.fill = colors.black
+  --   local qwa = display.newRect( group, 7, 11.3, 32, 32 )
+  --   qwa.fill = colors.black
+  --   local qwa = display.newRect( group, 3.737, -11.3, 32, 32 )
+  --   qwa.fill = colors.black
+  --   local qwa = display.newRect( group, -14.27, 4.19, 32, 32 )
+  --   qwa.fill = colors.black
+  --   local qwa = display.newRect( group, -28.3, -14.577, 32, 32 )
+  --   qwa.fill = colors.black
+  --   local qwa = display.newRect( group, -17.473, -23.17, 32, 32 )
+  --   qwa.fill = colors.black
+  -- else
+  --   group.border = {}
+  --   rectEnemy(group, -6.84, -43.335, 32, 32, {1,.7,0})
+  --   rectEnemy(group, 18.374, -25.18, 32, 32, {1,.7,0})
+  --   rectEnemy(group, 28.3, -1.5, 32, 32, {1,.7,0})
+  --   rectEnemy(group, 7, 11.3, 32, 32, {1,.7,0})
+  --   rectEnemy(group, 3.737, -11.3, 32, 32, {1,.7,0})
+  --   rectEnemy(group, -14.27, 4.19, 32, 32, {1,.7,0})
+  --   rectEnemy(group, -28.3, -14.577, 32, 32, {1,.7,0})
+  --   rectEnemy(group, -17.473, -23.17, 32, 32, {1,.7,0})
+  -- end
   
   physics.addBody( group, { box={halfWidth=88.62*.5, halfHeight=86.67*.5, x=0, y=-15} } )
   group.isFixedRotation = true
@@ -397,7 +399,7 @@ local function createNormalEnemy(x,y)
   
   group.speed = 1 * getValue("enemy.speed")
 
-  local img = display.newImageRect( group, "img/bug3.png", 130, 130 )
+  local img = display.newImageRect( group, "img/bug4.png", 130, 130 )
   -- if set.style==0 then
   --   local qwa = display.newRect( group, 0, 0, 42, 42 )
   --   qwa.fill = colors.black
@@ -524,10 +526,23 @@ function createOrb(x,y, type)
   group.y = y
   group.amount = orbTypes[type][1]
   
-  local qwa = display.newRect( group, 0, 0, 22.4, 22.4 )
-  qwa.fill = colors.black
-  local qwa = display.newRect( group, 0, 0, 16.85, 16.85 )
-  qwa.fill = orbTypes[type][2]
+  if type==1 then
+    local qwa = display.newImageRect( group, "img/leaves2.png", 75, 75 )
+  elseif type==2 then
+    local qwa = display.newImageRect( group, "img/leaves2.png", 110, 110 )
+  elseif type==3 then
+    local qwa = display.newImageRect( group, "img/leaves3.png", 100, 100 )
+  else
+    local qwa = display.newRect( group, 0, 0, 22.4, 22.4 )
+    qwa.fill = colors.black
+    local qwa = display.newRect( group, 0, 0, 16.85, 16.85 )
+    qwa.fill = orbTypes[type][2]  
+  end
+  -- elseif type==4 then
+  -- local qwa = display.newRect( group, 0, 0, 22.4, 22.4 )
+  -- qwa.fill = colors.black
+  -- local qwa = display.newRect( group, 0, 0, 16.85, 16.85 )
+  -- qwa.fill = orbTypes[type][2]
   
   physics.addBody( group,"static", { isSensor=true} )
   group.myName = orbTypes[type][3]
@@ -636,7 +651,9 @@ local function simpleAttack()
   local target = getNearestEnemy()
   if not target then return end
   audio.play(sounds.pew )
-  local bullet = display.newRect( bulletGroup, playerGroup.x, playerGroup.y, 8, 44 )
+  -- local bullet = display.newRect( bulletGroup, playerGroup.x, playerGroup.y, 8, 44 )
+  local bullet = display.newImageRect( bulletGroup, "img/igolka.png", 8, 44 )
+  bullet.x, bullet.y = playerGroup.x, playerGroup.y
   physics.addBody( bullet, { isSensor=true } )
   local r = q.getAngle(target.x, target.y, playerGroup.x, playerGroup.y)
   bullet.rotation = r
